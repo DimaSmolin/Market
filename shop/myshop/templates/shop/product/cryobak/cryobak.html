@@ -1,0 +1,179 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{% static "css/bootstrap.min.css" %}" rel="stylesheet">
+    <link href="{% static "css/style.css" %}" rel="stylesheet">
+    <link rel="icon" type="image/png" href="{% static 'favicon.ico' %}">
+
+
+    <title>{{ store }}</title>
+    <meta name="Description" content="{{ category }} от компании ПромКомплект в Красноярске!" />
+</head>
+<body>
+
+    <nav class="navbar sticky-top navbar-expand-lg navbar-light" style="background: white; box-shadow: 0 2px 4px rgba(0, 0, 0, .2);">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="{% url 'myshop:home' %}">{{ contactuser.name }}</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-link active" aria-current="page" href="{% url 'myshop:home' %}">Home</a>
+              <a class="nav-link" href="{% url 'myshop:category' %}">Категории</a>
+              <a class="nav-link" href="{% url 'myshop:products' %}">Продукция</a>
+	      <a class="nav-link" href="{% url 'myshop:contacts' %}">Контакты</a>
+              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true"></a>
+            </div>
+          </div>
+        </div>
+    </nav>
+
+    <section style="background: rgb(246,246,246);">
+        <div class="container">
+            <div class="row">
+                <div class="col-12" style="padding-top: 30px;">
+			        <h1 class="text-left text-uppercase mb-5" style="margin: auto;">{{ store }}</h1>
+                </div>
+            </div>
+
+
+
+            <div class="row">
+                <div class="col-12">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                          <li class="breadcrumb-item"><a href="{% url 'myshop:home' %}">Home</a></li>
+
+                          {% if category.parent %}
+                          <li class="breadcrumb-item"><a href="{% url 'myshop:product_list_by_category' category.parent.slug %}">{{ category.parent }}</a></li>
+                          {% endif %}
+                          <li class="breadcrumb-item active" aria-current="page">{{ store }}</li>
+                        </ol>
+                    </nav>
+                    <hr>
+                </div>
+            </div>
+
+
+
+        <!-- Текст криобака -->
+
+    <div style="margin-top: 20px; margin-left: auto; marfin-right: auto; margin-bottom: 20px; background: #dee4e9; padding: 25px; border-radius: 7px;">
+
+        <div style="font-size: 18px; margin-bottom: 20px; font-weight: 700;">
+        Широко используют при лазерной, плазменной, газопламенной резке и сварке металлов,
+        является выгодной альтернативой стальным баллонам с техническими газами (кислород, азот, аргон),
+            обладает целым рядом неоспоримых преимуществ:
+        </div>
+
+
+        <ul>
+            <li><b>Высокая чистота газа</b></li>
+            <li><b>Существенное снижение затрат на технические газы</b></li>
+            <li><b>Беспрерывное производство на станках</b></li>
+            <li><b>Повышенная безопасность хранения</b></li>
+            <li><b>Компактность</b></li>
+        </ul>
+
+
+        <div>
+            <div style="border-left: 1px solid black; padding-left: 10px; display: inline-block; margin-bottom: 20px;">
+                Получить консультацию по подбору криогенного оборудования:<br>
+                Телефон: +79067055120 (whatsapp/telegram) Михаил<br>
+                Telegram: <a href="https://t.me/cryobak">t.me/cryobak</a><br>
+                E-mail: <a href="mailto:mg@cryobak.ru">mg@cryobak.ru</a><br>
+                Youtube: <a href="https://www.youtube.com/@cryobak2406">www.youtube.com/@cryobak2406</a><br>
+                Скидка 5% на оборудование по промокоду: «LITTLE» для аудитории проекта "little-biz"
+            </div>
+        </div>
+        <a
+<!-- Cryobak_products -->
+    <div style="width: 100%; display: flex; justify-content: center; margin-top: 30px;">
+        <div class="col-xxl-3 col-xl-3 col-md-6 col-sm-12">
+            <a href="{% url 'myshop:cryobak_products' %}"><img src="static/img/home/cilgor.jpg" class="card-img-top" alt="..."></a>
+                <p style="padding-top: 5px; margin-bottom: 45px; font-weight: bold">Продукция</p>
+        </div>
+    </div>
+
+
+            <h2>Высокая чистота газа</h2>
+
+        <p>Внутренний сосуд изготовлен из нержавеющей стали и не вступает в реакции, что обеспечивает требуемую чистоту исходного газа</p>
+
+        <p>Чистота газа играет важную роль в качестве резки при использовании лазерной или плазменной технологии. Вот несколько способов, как чистота газа может влиять на качество реза:</p>
+
+        <ol>
+        <li>Уменьшение окалины и повышение качества кромки: Загрязнения в газе, такие как металлическая стружка, пыль, ржавчина, приводят к образованию окалины и неровностей которые могут негативно повлиять на качество и точность резки. Чем чище газ, тем меньше вероятность образования окалины и более чистый рез.</li>
+        <li>Снижение окисления: Некачественный газ может содержать окислы, которые могут вступать в реакцию с поверхностью материала во время резки. Это может вызывать окисление и образование окисленных слоев на результирующей поверхности. Чистый газ помогает снизить уровень окисления, что приводит к более чистому и более качественному резу.</li>
+        <li>Улучшение точности: Примеси в газе могут вызывать неравномерное распределение энергии лазерного луча или плазмы, что приводит к неоднородности реза. Чистота газа позволяет более точно и равномерно распределить энергию, что в конечном итоге приводит к более точному и качественному резу.</li>
+        <li>Предотвращение повреждения оборудования: Загрязнения в газе также могут негативно влиять на работу и долговечность оборудования для резки. Примеси могут накапливаться в системе подачи газа, приводя к засорению и повреждению компонентов. Чистота газа помогает предотвратить повреждение оборудования и обеспечить его более длительную и надежную работу.</li>
+        </ol>
+        <p>В целом, чистота газа имеет прямое влияние на качество резки при использовании лазерной или плазменной технологии.
+            Чистый газ обеспечивает более чистый, равномерный и точный рез, а также предотвращает деформацию материала и повреждение оборудования. П
+            оэтому важно обеспечить достаточную степень очистки газа перед его использованием в процессе резки.</p>
+
+        <h2>Существенное снижение затрат на технические газы</h2>
+
+          <p>Стоимость газа в сжиженном состоянии существенно ниже стоимости газа в стальных баллонах</p>
+          <p>Баллонный газ производится из жидкого, поэтому такой газ дороже, так как затрачивается энергия на его производство и логистику. При эксплуатации баллонов, в них остается много не использованного газа, в среднем 15-20%. Частые разгрузки, погрузки, перемещения, замена пустых баллонов, остановка станков - все это, казалось бы, мелочи, приводят к дополнительным трудозатратам и напрямую влияют на сроки и количество изготавливаемой продукции.</p>
+          <h2>Беспрерывное производство на станках</h2>
+          <p>Использование криогенного оборудования в лазерной, плазменной, газопламенной резке или сварке металлов позволяет обеспечить беспрерывное производство, без необходимости менять баллоны с газом во время работы станка. Криогенные жидкости имеют большой объем получаемого газа (кислород, азот, аргон) и могут быть поданы непосредственно в рабочую зону станка, что сокращает простои, упрощает обслуживание, повышает производительность и снижает затраты на перезаправку баллонов. Беспрерывное производство способствует увеличению эффективности и конкурентоспособности предприятия.</p>
+          <h2>Повышенная безопасность хранения</h2>
+          <p>Использование криогенного оборудования в лазерной, плазменной, газопламенной резке и сварке металлов обеспечивает повышенную безопасность в связи с хранением газа при низком давлении. Криогенные жидкости, используемые в качестве газа, хранятся в оборудовании при давлении от 0 до 29 атмосфер, что в разы ниже по сравнению со стальными баллонами, где давление может достигать до 200 атмосфер.</p>
+          <h2>Компактность</h2>
+          <p>Значительное сокращение площади хранения. Один вертикальный газификатор с номинальным объёмом 196л. заменяет до 28 шт. обычных 40-а литровых стальных баллонов, а горизонтальный газификатор с номинальным объёмом 495л. заменяет – до 68 шт. обычных 40-а литровых стальных баллонов!</p>
+
+        <h2>О НАС</h2>
+         <p>ООО «КРИОБАК» является официальным представителем ведущих мировых производителей криогенного оборудования и поставщиком ПАО «КАМАЗ», АО «АВТОВАЗ», ОАО «МАЗ», АО «АЗ «УРАЛ», Холдинга БМГ, ЛиАЗ, Air Liquide Россия, Linde Gas Россия, ПАО «НОВАТЭК», ПАО «Татнефть» и др.</p>
+         <p>Наша компания осуществляет поставку емкостей, газификаторов и криоцилиндров более 12 лет и является лидером продаж в отрасли. Мы имеем самый большой, постоянно пополняемый склад криогенного оборудования и арматуры России. Это дает возможность подобрать оборудование, оптимально подходящее для решения ваших технологических задач с целью обеспечения бесперебойной и эффективной работы предприятий, в кратчайшие сроки осуществить ремонтные работы криогенного оборудования любого масштаба.</p>
+         <p>ООО «КРИОБАК» выполняет полный комплекс мероприятий по разработке документации, монтажу и настройке рабочих параметров оборудования для удовлетворения потребностей своих клиентов. Также, по Москве и МО мы поставляем кислород, азот и аргон к месту заправки Ваших емкостей, а клиентам из регионов, благодаря нашему многолетнему опыту, поможем подобрать ближайших поставщиков жидких газов.</p>
+         <p>Обращаясь для приобретения криогенного оборудования в нашу компанию, вы получаете высокое качество продукции и сервиса, а также полную консультационную поддержку по всем вопросам, связанным с эксплуатацией данного оборудования!</p>
+    </div>
+
+
+        <!-- pagination -->
+
+            <div class="pagination" style="margin-bottom: 10px">
+                <span class="step-links">
+                    {% if page_obj.has_previous %}
+                        <a href="?page=1">&laquo; первая</a>
+                        <a href="?page={{ page_obj.previous_page_number }}">предыдущая</a>
+                    {% endif %}
+
+                    <span class="current">
+                        Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+                    </span>
+
+                    {% if page_obj.has_next %}
+                        <a href="?page={{ page_obj.next_page_number }}">следующая</a>
+                        <a href="?page={{ page_obj.paginator.num_pages }}">последняя &raquo;</a>
+                    {% endif %}
+                </span>
+            </div>
+
+        </div>
+    </section>
+
+
+    <footer role="contentinfo">
+        <div class="container" style="color: aliceblue;">
+            <div class="row">
+                <div class="col" style="position: relative;">
+                    <div style="position: absolute; top: 35%;">{{ store }}</div>
+                </div>
+                <div class="col" style="text-align: right;">
+                    <p style="margin: 0;">{{ store.phone_number }}</p>
+                    <p style="margin: 0;">mailto:mg@cryobak.ru</p>
+                    <p style="margin: 0;"><a href="https://t.me/cryobak">t.me/cryobak</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js" integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script>
+</html>

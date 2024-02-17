@@ -1,0 +1,90 @@
+html {
+    height: 100%;
+  }
+  body {
+    margin: 0;
+
+    /* Растягиваем body по высоте html */
+    min-height: 100%;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+  }
+  header {
+    background: blue;
+  }
+  
+  main {
+    background: rgb(246,246,246);
+  }
+  
+  footer {
+    background: black;
+    padding: 20px;
+  }
+.center {
+    position: absolute;
+    margin-top: 4px;
+    margin-left: 4px;
+    background: gray;
+    font-weight: bold;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 25px;
+    color: white;
+    border-radius: 3px;
+    opacity: .7;
+}
+.center:hover {
+    opacity: 15;
+    color: gray;
+    background: white;
+}
+.first-text {
+    display: block;
+    position: absolute;
+    color: white;
+    width: 310px;
+    margin: 30px auto 30px;
+    background: rgba(62, 66, 66, 0.7);
+    justify-content: center;
+    padding: 5px;
+    align-items: center;
+}
+.font1 {
+    font-family:'Arial Black', Gadget, sans-serif;
+    text-align: center;
+    color: white;
+}
+.font3 {
+    font-family: 'Times New Roman', Times, serif;
+    display: table;
+    margin: 0 auto;
+    color: white;
+    font-size: 20px;
+  }
+.big-font {
+    font-size: 62px;
+    font-weight: 600;
+    height: 80px;
+    text-align: center;
+}
+.small-font {
+    font-weight: 600;
+    text-align: center;
+}
+.orange-line {
+    background: rgb(247, 112, 9);
+    padding-bottom: 10px;
+}
+#myDiv {
+  width: 200px; /* задайте ширину и высоту div по умолчанию */
+  height: 200px;
+  border: 1px solid black; /* задайте нужные стили для div */
+}
+/* Стили для мобильных устройств */
+@media only screen and (max-width: 480px) {
+  #myDiv {
+    width: 100px; /* уменьшите ширину и высоту div для мобильных */
+    height: 100px;
+  }
+}
